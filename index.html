@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML LANG="EN">
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Borys Bradel">
+   <META NAME="Description" CONTENT="Borys Bradel Home Page Main Index">
+   <META NAME="KeyWords" CONTENT="computers and computer programming">
+   <TITLE>Borys Bradel's Home Page</TITLE>
+   <STYLE>
+body, feed, rss, channel, rss channel { 
+    font-family: sans-serif; background-color: #CCFFFF; margin:0em 1em;
+}
+
+guid, id, link, pubDate, feed pubDate, updated, entry updated, item 
+updated, author {
+    display: none;
+}
+p {font-size: 105%}
+
+feed title, channel title, p.TITLE0 {
+    font-weight: bold;
+    font-size: 150%;
+    color: #000033;
+}
+
+entry, item, div.part0 {
+    display:block;
+    margin:1em;
+    background-color: #FFFFFF;
+    width: 40em;
+}
+entry title, item title {
+    text-align:left;
+    font-size:120%;
+    display: block;
+    font-weight: bold;
+    padding: 0.1em 0.5em;
+    background-color: #000033;
+    color: #FFFFFF;
+}
+p.TITLE1 {
+    text-align:left;
+    font-size:120%;
+    display: block;
+    font-weight: bold;
+    padding: 0.1em 0.5em 0.0em 0.5em;
+    background-color: #000033;
+    color: #FFFFFF;
+}
+
+content { 
+    line-height:130%;
+    display: block;
+    padding: 0.1em 0.5em;
+}
+div.part1 { 
+    line-height:130%;
+    display: block;
+    padding: 0.0em 0.5em 0.1em 0.5em;
+}
+   </STYLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#CCFFFF">
+<p class=title0>Borys Bradel's Home Page</p>
+<div class=part0>
+                <p class=TITLE1>New Website</p>
+                <div class=part1>
+<P>This is my new website. It's hosted on GitHub, where I have a couple of web browser projects: <A HREF=https://github.com/BorysBradel/VeryBasicBrowser>VeryBasicBrowser</A> and <A HREF=https://github.com/BorysBradel/BasicBrowser>BasicBrowser</A>.</P>
+<P>My old website is at <A HREF="http://pages.ca.inter.net/~maxbradel/">http://pages.ca.inter.net/~maxbradel/</A>.</P>
+<P>I have included a couple of blog posts from my old website that I still find useful.</P>
+</div>
+</div>
+<div class=part0>
+                <p class=TITLE1>My vim initialization file</p>
+                <div class=part1>
+<P>The following is my vim initialization file, the ".vimrc" in my home directory:
+</P><P>
+set nocompatible " use Vim settings instead of vi
+</P><P>
+set backspace=indent,eol,start " allow backspacing over all
+</P><P>
+" following 8 lines from vimrc example (note, autocmd cannot have empty lines)
+</P><P>
+" filetype plugin indent on " autoindent files
+</P><P>
+" augroup vimrcEx " put in autocmd group for easy removal
+</P><P>
+" au!
+</P><P>
+" " jump to last known position at start
+</P><P>
+autocmd BufReadPost *
+</P><P>
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+</P><P>
+  \   exe "normal g`\"" |
+</P><P>
+  \ endif
+</P><P>
+colorscheme torte " this is a nice black-background scheme
+</P><P>
+syntax enable " syntax highlighting
+</P><P>
+set showmatch " paren matching when inserting
+</P><P>
+set autoindent " autoindent only works after plugin
+</P><P>
+set shiftwidth=4
+</P><P>
+set softtabstop=4
+</P><P>
+set hlsearch " highlight last search
+</P><P>
+set history=50 " keep 50 lines of history
+</P><P>
+set ruler " show cursor position all the time
+</P><P>
+" swap ; and : in command mode to avoid pressing shift too much
+</P><P>
+nnoremap ; :
+</P><P>
+nnoremap : ;
+</P><P>
+imap &lt;TAB> &lt;C-H>
+</P><P>
+source ~/keyboard.qwerty2colemakb
+</P><P>
+That's the entire file.  The commands are commented and relatively self explanatory, except for the last two: "imap &lt;TAB> &lt;C-H>" and "source ~/keyboard.qwerty2colemakb".
+</P><P>
+The first of these commands maps the tab key to the erase-previous-character command, which is control-h.  The second loads in a file with commands that map the qwerty keyboard to a modified <a href="http://colemak.com">Colemak</a> layout.  The layout is nice in that it avoids excessive hand movements.  The best place to practice is at <a href="http://millikeys.sourceforge.net/asset/demo.html">this site</a>, which also shows a different good layout called Asset.  For me, both Colemak and Asset are better than Qwerty and Dvorak.  My modifications change the position of the non-alphanumeric keys to suit my typing habits.  The modified layout has the following keys on the keyboard (from left to right):
+</P><P>
+1234567890'=
+</P><P>
+qwfpgjluy;,/\
+</P><P>
+arstdhneio-
+</P><P>
+zxcvbkm().
+</P><P>
+</P><P>
+And the following when shift is held:
+</P><P>
+!@#$%^&*[]"+
+</P><P>
+QWFPGJLUV:{}|
+</P><P>
+ARSTDHNEIO_
+</P><P>
+ZXCYBKM<>?
+</P><P>
+Each key can be modified using the inoremap command, which indicates a mapping in interactive mode with no recursion.  For example, "inoremap e f" changes an "e" to an "f".
+</P><P>
+</P><P>
+</P><P>
+</P>
+</div>
+</div>
+<div class=part0>
+                <p class=TITLE1>Backup Strategy Summary</p>
+                <div class=part1>
+<p>What is an effective backup strategy?
+</p><p>
+Since the answer I wrote is rather long, I will post a summary of the answer first.  The summary contains the high and low level views of my solution, which although not perfect, is the only workable one I could find after searching for many years.
+</p><p>
+At the high level, backups require three essential components.
+</p><p>
+First, identify the data that needs to be saved.
+</p><p>
+Second, make backups once in a while.
+</p><p>
+Third, store the backups far away from the original data.
+</p><p>
+At the low level, the solution is to create a folder that contains all the material (which needs to fit on a cd/dvd if it is written to a cd/dvd, although this limitation can be overcome by spanning several cds/dvds) to backup (e.g. ~/b), write it out to cd/dvd and write a git repository of it to usb, and store these media in a safe place.
+</p><p>
+Sample commands for cd/dvd burning are
+</p><p>
+cd ~
+</p><p>
+mkisofs -r -iso-level=4 -m b/.git -o savedimg.iso b
+</p><p>
+dvdisaster -c -mRS02 -i savedimg.iso
+</p><p>
+/usr/bin/cdrecord speed=4 padsize=63s -pad -dao -v -eject -data savedimg.iso
+</p><p>
+Sample commands for cd/dvd reading, testing, and fixing are
+</p><p>
+dvdisaster -r -d/dev/cdrom -i image-new.iso
+</p><p>
+dvdisaster -t -i image-new.iso
+</p><p>
+dvdisaster -f -i image-new.iso
+</p><p>
+Sample commands for git repository creation are (assuming usb drive is connected)
+</p><p>
+cd /media/device
+</p><p>
+mkdir b
+</p><p>
+cd b
+</p><p>
+git --bare init
+</p><p>
+rm hooks/*
+</p><p>
+cd ~/b
+</p><p>
+git init
+</p><p>
+git remote add save1 /media/device/b (assuming usb drive is connected)
+</p><p>
+Sample commands for backing up to usb are
+</p><p>
+cd ~/b
+</p><p>
+git add .
+</p><p>
+git commit -m"auto backup"
+</p><p>
+git push save1 master
+</p><p>
+Sample commands for restoring to another system are (assuming usb drive is connected)
+</p><p>
+cd ~
+</p><p>
+git clone /media/device/b
+</p><p>
+Sample commands for undoing a deletion or change are (assuming usb drive is connected)
+</p><p>
+cd ~/b/whateve/dir/has/deleted/file
+</p><p>
+git checkout -- deleted.file
+</p>
+</div>
+</div>
+<div style="color:#0000CC;width:40em;margin:1em;display:block;"><p>
+<span> &#160; &#160; </span> </p>
+<p style="font-size: 80%">Copyright &copy; 2008-2022 Borys Bradel. All rights reserved.  This site is only my possibly incorrect opinion.</p>
+</div></BODY></HTML>
